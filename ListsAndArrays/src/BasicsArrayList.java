@@ -30,6 +30,10 @@ public class BasicsArrayList {
 		list.add("old1");
 		list.add("old2");
 		
+		// should use a wrapper class for other types
+		Integer i = new Integer(1);
+		list.add(i);
+		
 		// print the array list
 		printList(list);
 		
