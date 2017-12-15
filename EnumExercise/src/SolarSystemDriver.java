@@ -25,6 +25,18 @@ public class SolarSystemDriver {
 	 */
 	
 	public static void main(String[] args) {
+		
+		String t = "\t";
+		
+		System.out.println("PLANET" + t + t+ "MASS" + t + t + "RADIUS" + t + t + "GRAVITY" + t + t + "WEIGHT");
+		System.out.println("------------------------------------------------------------------------");
+		for(SolarSystem planet: SolarSystem.values()) {
+			System.out.println(planet 
+					+ t + t + String.format("%4.2e",planet.getMass()) 
+					+ t + String.format("%4.2e",planet.getRadius())
+					+ t + String.format("%4.2e",planet.getGravity())
+					+ t + String.format("%4.2e",planet.getWeight()));
+		}
 
 	}
 

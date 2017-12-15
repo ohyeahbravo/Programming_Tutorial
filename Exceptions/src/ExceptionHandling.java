@@ -15,17 +15,49 @@ public class ExceptionHandling {
 
 		int a = 5;
 		int b = 0;
-		int div = a/b;
 		
-		int[] arr = new int[5];
-		arr[5] = 7;
+		try {
+			int div = a/b;
+		} catch(ArithmeticException e) {
+			e.printStackTrace();
+		}
 		
-		String one = "one";
-		int i = Integer.parseInt(one);
+		try {
+			int[] arr = new int[5];
+			arr[5] = 7;
+		} catch(ArrayIndexOutOfBoundsException e) {
+			e.printStackTrace();
+		}
 		
-		double c = -7.0;
-		double d = Math.sqrt(c);
-		System.out.println(d);
+		try {
+			String one = "one";
+			int i = Integer.parseInt(one);
+		} catch(NumberFormatException e) {
+			e.printStackTrace();
+		}
+		
+		try {
+			double c = -7.0;
+			if(c < 0.0) {
+				throw new NegativeRootException("Square Root cannot be applied to a negative number.");
+			}
+			double d = Math.sqrt(c);
+			System.out.println(d);
+			//
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
-
+}
+	
+class NegativeRootException extends Exception {
+	String err_msg;
+	
+	NegativeRootException(String exp) {
+		super(exp);
+	}
+	
+	public String toSring() {
+		return err_msg;
+	}
 }
