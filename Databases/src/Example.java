@@ -1,4 +1,5 @@
-
+// Commented out to prevent main method crush with DatabaseHelper.java
+/*
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -40,3 +41,4 @@ public class Example {
         conn.close();
     }
   }
+  */
