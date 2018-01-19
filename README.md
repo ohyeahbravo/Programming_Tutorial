@@ -13,6 +13,7 @@ Proper order of exercises:
 * Enums 
 * Generics  
 * Databases 
-* InputOutput
+* InputOutput 
+* ChainedLists
 
 For further instructoins please visit the [wiki](https://github.com/NaNaDi/Programming_Tutorial/wiki)
