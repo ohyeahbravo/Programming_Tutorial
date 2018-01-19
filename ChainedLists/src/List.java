@@ -10,10 +10,70 @@ public class List {
 	 * be working in the end.
 	 * */
 	
-	private Cell front;
+	private Cell front = null;
 	
 	public void removeYAfterX(int x, int y){
-		//complete me
+		Cell marker = front;
+		int count = 0;
+		
+		while(marker != null) {
+			if(marker.content == y) {
+				count++;
+				if(count == x) {
+					remove(marker);
+					return;
+				}
+			}
+			marker = marker.next;
+		}
+		System.out.println("There is no value.");
+	}
+	
+	public void remove(Cell cell) {
+		
+		if(cell == front) { // cell is the head
+			front = front.next;
+		} else {	// cell is not the head
+		Cell previous = cell.prev;		
+		previous.next = cell.next;
+		}
+	}
+	
+	public void insert(int value) {
+		
+		// Initialize
+		Cell cell = new Cell();
+		cell.content = value;
+		cell.next = null;	// will be the last item anyway
+		
+		if(front == null) {	// list is empty
+			cell.prev = null;
+			front = cell;
+		} else {	// list not empty
+			Cell marker = front;
+			while(marker.next != null) {
+				marker = marker.next;
+			}
+			marker.next = cell;
+			cell.prev = marker;
+		}
+	}
+	
+	public void print() {
+		
+		// empty list
+		if(front == null) {
+			System.out.println("The list is empty.");
+			return;
+		}
+		
+		System.out.println("*** List *** ");
+		Cell marker = front;
+		while(marker != null) {
+			System.out.println(marker.content);
+			marker = marker.next;
+		}
+		
 	}
 	
 }
